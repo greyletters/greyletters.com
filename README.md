@@ -1,40 +1,50 @@
 # Greyletters
 
-Anonymous. Encrypted. Edge Runtime.
+An anonymous writing platform for thoughts that never get said out loud.
 
-## Project Setup
+## About
 
-1.  **Install Dependencies:**
-    ```bash
-    npm install
-    ```
+Greyletters is a place for raw, unfiltered writing about pressure, burnout, mental health, and the weight of modern life. No accounts. No tracking. No pretending.
 
-2.  **Run Locally:**
-    ```bash
-    npm run dev
-    ```
+## Tech Stack
 
-3.  **Build for Cloudflare Workers:**
-    ```bash
-    npm run build
-    ```
-    This command runs `next build` followed by `next-on-pages` to generate the `_worker.js` output.
+- **Framework**: Next.js 15 (App Router)
+- **Styling**: TailwindCSS
+- **Hosting**: Cloudflare Workers (Edge Runtime)
+- **Deployment**: Cloudflare Pages
 
-4.  **Deploy:**
-    ```bash
-    npm run deploy
-    ```
-    This uses `wrangler` to deploy to Cloudflare.
+## Running Locally
 
-## Architecture
+```bash
+# Install dependencies
+npm install --legacy-peer-deps
 
--   **Framework:** Next.js 16 (App Router)
--   **Runtime:** Cloudflare Workers (Edge)
--   **Styling:** TailwindCSS (Neon/Futuristic)
--   **Content:** Static JSON (No database required)
+# Start dev server
+npm run dev
+```
 
-## Notes
+Open [http://localhost:3000](http://localhost:3000)
 
--   All pages force `export const runtime = 'edge'`.
--   No `fs` or Node.js specific APIs are used in the runtime.
--   Content is located in `content/`.
+## Deployment
+
+This project is designed to run on Cloudflare Workers edge runtime.
+
+```bash
+# Build
+npm run build
+
+# Deploy to Cloudflare
+npx wrangler deploy
+```
+
+## Contributing
+
+This is an open source project. Feel free to submit pull requests or open issues.
+
+## License
+
+Open source. Do what you want with it.
+
+---
+
+**No personal data is collected. Ever.**

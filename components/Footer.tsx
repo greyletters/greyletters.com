@@ -42,6 +42,21 @@ const Footer = () => {
                 <p className="text-xs text-text-dim/50 italic">
                     No other social networks are used.
                 </p>
+
+                <div className="pt-4 border-t border-white/5 w-full max-w-md">
+                    <p className="text-xs text-text-dim">
+                        This website is{" "}
+                        <span className="text-neon-secondary">open source</span>
+                    </p>
+                    <a
+                        href="https://github.com/greyletters/greyletters.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-neon-primary hover:text-neon-secondary transition-colors"
+                    >
+                        github.com/greyletters/greyletters.com
+                    </a>
+                </div>
             </Container>
         </footer>
     );
