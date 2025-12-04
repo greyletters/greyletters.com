@@ -1,10 +1,8 @@
 name = "greyletters"
 compatibility_date = "2025-01-01"
 compatibility_flags = ["nodejs_compat"]
-main = ".vercel/output/static/_worker.js/index.js"
-
-[build]
-command = "npm run build && npm run pages:build"
+main = ".open-next/worker.js"
 
 [assets]
-directory = ".vercel/output/static"
+directory = ".open-next/assets"
+binding = "ASSETS"
