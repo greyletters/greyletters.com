@@ -1,10 +1,9 @@
 name = "greyletters"
-main = "./.worker/dist/index.js"
 compatibility_date = "2025-01-01"
 compatibility_flags = ["nodejs_compat"]
 
-[site]
-bucket = ".worker/assets"
-
 [build]
-command = "npm run build"
+command = "npm run build && npm run pages:build"
+
+[site]
+bucket = ".vercel/output/static"
