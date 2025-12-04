@@ -1,12 +1,28 @@
 import Container from "@/components/Container";
-import Link from "next/link";
-import entries from "@/content/journal/entries.json";
+import GlowCard from "@/components/GlowCard";
 import { notFound } from "next/navigation";
+import entriesData from "@/content/journal/entries.json";
 
 export const runtime = "edge";
 
+interface Entry {
+    slug: string;
+    title: string;
+    date: string;
+    excerpt: string;
+    content: string;
+}
+
+const entries: Entry[] = entriesData as Entry[];
+
 interface PageProps {
     params: Promise<{ slug: string }>;
+}
+
+export async function generateStaticParams() {
+    return entries.map((entry) => ({
+        slug: entry.slug,
+    }));
 }
 
 export default async function JournalEntry({ params }: PageProps) {
@@ -19,37 +35,24 @@ export default async function JournalEntry({ params }: PageProps) {
 
     return (
         <Container className="py-20">
-            <Link
-                href="/journal"
-                className="inline-block mb-8 text-sm text-text-dim hover:text-neon-secondary transition-colors"
-            >
-                &larr; Back to Journal
-            </Link>
-
             <article className="max-w-3xl mx-auto">
-                <header className="mb-12 text-center border-b border-white/10 pb-8">
-                    <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 font-mono">
+                <header className="mb-12">
+                    <time className="text-neon-accent text-sm">{entry.date}</time>
+                    <h1 className="text-4xl md:text-5xl font-bold mt-2 text-white">
                         {entry.title}
                     </h1>
-                    <time className="text-neon-primary font-mono text-sm">
-                        {entry.date}
-                    </time>
                 </header>
 
-                <div className="prose prose-invert prose-lg max-w-none text-text-muted leading-relaxed font-mono">
-                    {entry.content.split('\n\n').map((paragraph, index) => (
-                        <p key={index} className="mb-6">
-                            {paragraph}
-                        </p>
-                    ))}
-                </div>
+                <GlowCard>
+                    <div className="prose prose-invert prose-lg max-w-none">
+                        {entry.content.split("\n").map((paragraph, index) => (
+                            <p key={index} className="text-text-muted leading-relaxed mb-4">
+                                {paragraph}
+                            </p>
+                        ))}
+                    </div>
+                </GlowCard>
             </article>
         </Container>
     );
-}
-
-export async function generateStaticParams() {
-    return entries.map((entry) => ({
-        slug: entry.slug,
-    }));
 }

@@ -1,12 +1,28 @@
 import Container from "@/components/Container";
-import Link from "next/link";
-import posts from "@/content/blog/posts.json";
+import GlowCard from "@/components/GlowCard";
 import { notFound } from "next/navigation";
+import postsData from "@/content/blog/posts.json";
 
 export const runtime = "edge";
 
+interface Post {
+    slug: string;
+    title: string;
+    date: string;
+    excerpt: string;
+    content: string;
+}
+
+const posts: Post[] = postsData as Post[];
+
 interface PageProps {
     params: Promise<{ slug: string }>;
+}
+
+export async function generateStaticParams() {
+    return posts.map((post) => ({
+        slug: post.slug,
+    }));
 }
 
 export default async function BlogPost({ params }: PageProps) {
@@ -19,37 +35,24 @@ export default async function BlogPost({ params }: PageProps) {
 
     return (
         <Container className="py-20">
-            <Link
-                href="/blog"
-                className="inline-block mb-8 text-sm text-text-dim hover:text-neon-primary transition-colors"
-            >
-                &larr; Back to Blog
-            </Link>
-
             <article className="max-w-3xl mx-auto">
-                <header className="mb-12 text-center">
-                    <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                <header className="mb-12">
+                    <time className="text-neon-secondary text-sm">{post.date}</time>
+                    <h1 className="text-4xl md:text-5xl font-bold mt-2 text-white">
                         {post.title}
                     </h1>
-                    <time className="text-neon-secondary font-mono text-sm">
-                        {post.date}
-                    </time>
                 </header>
 
-                <div className="prose prose-invert prose-lg max-w-none text-text-muted leading-relaxed">
-                    {post.content.split('\n\n').map((paragraph, index) => (
-                        <p key={index} className="mb-6">
-                            {paragraph}
-                        </p>
-                    ))}
-                </div>
+                <GlowCard>
+                    <div className="prose prose-invert prose-lg max-w-none">
+                        {post.content.split("\n").map((paragraph, index) => (
+                            <p key={index} className="text-text-muted leading-relaxed mb-4">
+                                {paragraph}
+                            </p>
+                        ))}
+                    </div>
+                </GlowCard>
             </article>
         </Container>
     );
-}
-
-export async function generateStaticParams() {
-    return posts.map((post) => ({
-        slug: post.slug,
-    }));
 }
