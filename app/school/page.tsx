@@ -1,7 +1,5 @@
 import Container from "@/components/Container";
 
-export const runtime = "edge";
-
 export default function School() {
     return (
         <Container className="py-20">

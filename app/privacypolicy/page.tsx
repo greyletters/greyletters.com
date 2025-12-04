@@ -2,8 +2,6 @@ import Container from "@/components/Container";
 import GlowCard from "@/components/GlowCard";
 import Link from "next/link";
 
-export const runtime = "edge";
-
 export default function PrivacyPolicy() {
     return (
         <Container className="py-20">

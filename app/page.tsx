@@ -2,8 +2,6 @@ import Container from "@/components/Container";
 import HoloText from "@/components/HoloText";
 import Link from "next/link";
 
-export const runtime = "edge";
-
 export default function Home() {
     return (
         <div className="flex flex-col items-center justify-center min-h-[80vh]">

@@ -1,8 +1,6 @@
 import Container from "@/components/Container";
 import GlowCard from "@/components/GlowCard";
 
-export const runtime = "edge";
-
 export default function About() {
     return (
         <Container className="py-20">

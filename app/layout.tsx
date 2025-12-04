@@ -13,8 +13,6 @@ export const metadata: Metadata = {
     description: "Anonymous thoughts from the edge.",
 };
 
-export const runtime = "edge";
-
 export default function RootLayout({
     children,
 }: Readonly<{

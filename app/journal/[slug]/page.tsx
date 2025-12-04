@@ -3,8 +3,6 @@ import GlowCard from "@/components/GlowCard";
 import { notFound } from "next/navigation";
 import entriesData from "@/content/journal/entries.json";
 
-export const runtime = "edge";
-
 interface Entry {
     slug: string;
     title: string;

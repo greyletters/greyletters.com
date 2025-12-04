@@ -3,8 +3,6 @@ import GlowCard from "@/components/GlowCard";
 import Link from "next/link";
 import entries from "@/content/journal/entries.json";
 
-export const runtime = "edge";
-
 export default function Journal() {
     return (
         <Container className="py-20">

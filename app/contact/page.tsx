@@ -2,8 +2,6 @@ import Container from "@/components/Container";
 import GlowCard from "@/components/GlowCard";
 import Link from "next/link";
 
-export const runtime = "edge";
-
 export default function Contact() {
     return (
         <Container className="py-20 min-h-[60vh] flex flex-col items-center justify-center">

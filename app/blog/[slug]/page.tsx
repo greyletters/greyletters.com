@@ -3,8 +3,6 @@ import GlowCard from "@/components/GlowCard";
 import { notFound } from "next/navigation";
 import postsData from "@/content/blog/posts.json";
 
-export const runtime = "edge";
-
 interface Post {
     slug: string;
     title: string;

@@ -1,8 +1,6 @@
 import Container from "@/components/Container";
 import Image from "next/image";
 
-export const runtime = "edge";
-
 export default function Suicide() {
     return (
         <Container className="py-20">
