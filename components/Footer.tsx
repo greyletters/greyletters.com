@@ -23,7 +23,7 @@ const Footer = () => {
                     </a>
                     <span className="hidden sm:inline text-white/20">|</span>
                     <a
-                        href="https://bsky.app/profile/greyletters.com"
+                        href="https://bsky.app/profile/greyletters.bsky.social"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hover:text-neon-secondary transition-colors"

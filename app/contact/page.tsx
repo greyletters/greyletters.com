@@ -24,7 +24,7 @@ export default function Contact() {
                         <div>
                             <h3 className="text-sm uppercase tracking-widest text-neon-secondary mb-1">Bluesky</h3>
                             <Link
-                                href="https://bsky.app/profile/greyletters.com"
+                                href="https://bsky.app/profile/greyletters.bsky.social"
                                 target="_blank"
                                 className="text-xl text-white hover:text-neon-primary transition-colors"
                             >
