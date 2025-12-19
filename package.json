@@ -14,13 +14,13 @@
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.0",
     "lucide-react": "^0.460.0",
-    "next": "15.0.0-rc.0",
-    "react": "^19.0.0-rc",
-    "react-dom": "^19.0.0-rc",
+    "next": "^16.1.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "tailwind-merge": "^2.2.0"
   },
   "devDependencies": {
-    "@opennextjs/cloudflare": "^0.6.0",
+    "@opennextjs/cloudflare": "^1.14.6",
     "@types/node": "^20.11.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
@@ -29,6 +29,6 @@
     "postcss": "^8.4.33",
     "tailwindcss": "^3.4.0",
     "typescript": "^5.3.0",
-    "wrangler": "^3.24.0"
+    "wrangler": "^4.56.0"
   }
 }
